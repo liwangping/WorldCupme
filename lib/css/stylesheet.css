@@ -1,0 +1,238 @@
+/*
+*lwp
+*2019-3-27
+*/
+/* all reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+body{
+    font-size: 100%;
+    font-family: Helvetica, sans-serif,Fallback;
+    /* 默认优先字体 */
+    -webkit-tab-hightlight-color: rgba(0,0,0,0);
+    /* 兼容性问题优先内核 */
+    -ms-tab-hightlight-color: rgba(0,0,0,0);
+    tab-hightlight-color: rgba(0,0,0,0);
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    /* 背面的可见性 */
+    backface-visibility: hidden;
+}
+img{
+    display: inline-block;
+}
+.f12{
+    font-size: 12px;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.cf::before{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 容器布局设置 */
+.perspective{
+    height: 100%;
+    margin: 0 auto;
+}
+.load{
+    position: absolute;
+    /* 相对定位找到body */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #43812b;
+    z-index: 1000;
+    display: none;
+}
+.loadImg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+}
+.loadTxt{
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Impact,Georgia,'Times New Roman', Times, serif;
+}
+.circle{
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,0.9);
+    opacity: .9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 30px #fbf49a;
+    -ms-box-shadow: 0 0 30px #fbf49a;
+    box-shadow: 0 0 30px #fbf49a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spinPulse 1s infinite linear;
+}
+@keyframes spinPulse{
+    0%{
+        transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+    }
+    50%{
+        transform: rotate(145deg);
+    }
+    100%{
+        transform: rotate(-320deg);
+    }
+}
+.circle1{
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,1);
+    opacity: .9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 15px #fbf49a;
+    -ms-box-shadow: 0 0 15px #fbf49a;
+    box-shadow: 0 0 15px #fbf49a;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    animation: spinOffPulse 1s infinite linear;
+}
+@keyframes spinOffPulse{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+        box-shadow: 0 0 1px #2187e7;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+/* 首页 */
+.global{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  .screen{
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  .ease{
+    -webkit-transition: all 1.0s ease-in-out;
+    transition: all 1.0s ease-in-out;
+  }
+  
+  .animated{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .layer{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .global,.screen,.layer{
+    z-index: 1
+  }
+  
+  .layer1{
+    position: relative;
+    background: url('http://mat1.gtimg.com/sports/worldcup2014/match/page_1.jpg') top center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  
+  .layer1 .inner{
+    width: 100%;
+    height: 100%;
+  }
+  .layer1 .hd{
+      padding: 10px 30px;
+      color: #9bc894;
+  }
+  .layer1 .bd{
+      position: absolute;
+      left: 0;
+      top: 7%;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+  }
+  .layer1 .animated .mofang{
+      opacity: 1;
+      animation: mofang 1.3s linear;
+  }
+  @keyframes mofang{
+      0%,50%{
+          transform: scale(0);
+          opacity: 0.5;
+      }
+      70%{
+          transform: scale(1.5);
+          opacity: 0.8;
+      }
+      80%{
+          transform: scale(0.8);
+          opacity: 1;
+      }
+      100%{
+          transform: scale(1.2);
+      }
+  }
+  .layer1 .ft{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+  }
+  .layer1 .ft .btn{
+      position: relative;
+      height: 37px;
+      margin: 0 auto;
+      text-align: center;
+      color: #435d50;
+      font: 16px/32px "微软雅黑";
+  }
+  .layer1 .ft .btn1{
+      
+  }
+  
